@@ -1,0 +1,18 @@
+.product-cart {
+	position: absolute;
+	top: 30px;
+	right: 0;
+	width: 450px;
+	min-height: 40px;
+	background: #fafafa;
+	border-radius: 5px;
+	padding: 10px;
+	-webkit-box-shadow: 10px 10px 20px 0px #6a6a6a;
+	box-shadow: 5px 5px 20px -5px #6a6a6a;
+	z-index: 1000;
+	&__empty {
+		margin-left: 20px;
+		line-height: 40px;
+		font-size: 20px;
+	}
+}

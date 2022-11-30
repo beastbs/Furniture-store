@@ -1,0 +1,29 @@
+.cart-order {
+	width: 100%;
+	float: left;
+	margin-bottom: 10px;
+	&__img {
+		float: left;
+		width: 70px;
+		margin-right: 20px;
+	}
+	&__title {
+		font-size: 20px;
+	}
+	&__price {
+		color: #797979;
+		font-weight: 600;
+	}
+	&__delete-icon {
+		float: right;
+		color: #ca5252;
+		cursor: pointer;
+		position: relative;
+		top: -25px;
+		transition: color, transform 500ms ease;
+		&:hover {
+			color: #d83030;
+			transform: scale(1.5);
+		}
+	}
+}

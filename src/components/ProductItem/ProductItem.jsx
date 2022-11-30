@@ -1,12 +1,18 @@
+import Rating from "../Rating/Rating";
 import "./ProductItem.scss";
 
-const ProductItem = ({ title, desc, imgUrl, imgs, price }) => {
-  console.log(imgUrl);
+const ProductItem = ({ title, imgUrl, price, onAddInCart }) => {
   return (
     <div className="product-item">
-      <h2>{title}</h2>
-      <p>{desc}</p>
-      <img src={imgUrl} alt="" />
+      <img className="product-item__img" src={"./img/" + imgUrl} alt={title} />
+      <h2 className="product-item__title">{title}</h2>
+      <Rating />
+      <b className="product-item__price">{`${
+        price ? price + `$` : `Цену уточняйте у продавца`
+      }`}</b>
+      <div onClick={onAddInCart} className="product-item__add-to-cart">
+        +
+      </div>
     </div>
   );
 };
