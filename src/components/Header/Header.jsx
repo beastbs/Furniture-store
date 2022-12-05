@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHttp } from "../../hooks/http.hook";
 
-import { fetchProducts } from "../../redux/actions";
-import { fetchCategories } from "../../redux/actions";
+import { fetchProducts } from "../../redux/reducers/productsSlice";
+import { fetchCategories } from "../../redux/reducers/categoriesSlice";
 
 import { Link } from "react-router-dom";
 
@@ -20,7 +20,7 @@ const Header = () => {
 
   useEffect(() => {
     dispatch(fetchProducts(request));
-    dispatch(fetchCategories(request));
+    dispatch(fetchCategories());
   }, [request, dispatch]);
 
   const classCart = ["header__shop-cart-btn"];
