@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHttp } from "../../hooks/http.hook";
+
 import { fetchProducts } from "../../redux/actions";
 import { fetchCategories } from "../../redux/actions";
+
+import { Link } from "react-router-dom";
 
 import ProductCart from "../ProductCart/ProductCart";
 import { FaShoppingCart } from "react-icons/fa";
@@ -28,7 +31,9 @@ const Header = () => {
   return (
     <header className="header">
       <div>
-        <span className="header__logo">House staff</span>
+        <Link to="/">
+          <span className="header__logo">House staff</span>
+        </Link>
         <ul className="header__nav">
           <li>О нас</li>
           <li>Контакты</li>

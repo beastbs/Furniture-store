@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { deleteProductFromCart } from "../../redux/actions";
+import { deleteProductFromCart } from "../../redux/reducers/productsSlice";
 
 import ProductCartOrder from "../ProductCartOrder/ProductCartOrder";
 import TotalAmountOrder from "../TotalAmountOrder/TotalAmountOrder";
@@ -8,7 +8,7 @@ import "./ProductCart.scss";
 
 const ProductCart = () => {
   const dispatch = useDispatch();
-  const { orders } = useSelector((state) => state.productsReducer);
+  const { orders } = useSelector((state) => state.products);
 
   const onDeleteFromCart = (id) => {
     const newCartList = orders.filter((order) => order.id !== id);

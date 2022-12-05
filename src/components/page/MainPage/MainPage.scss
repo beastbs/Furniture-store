@@ -1,0 +1,26 @@
+.main-page {
+	& p,
+	& li {
+		font-size: 20px;
+		line-height: 1.5;
+	}
+	& p {
+		margin: 25px 0;
+	}
+	& li {
+		margin: 10px 0 10px 25px;
+	}
+	&__products {
+		display: inline-block;
+		font-weight: 600;
+		font-size: 18px;
+		border: 1px solid transparent;
+		padding: 10px 20px;
+		margin-bottom: 30px;
+		cursor: pointer;
+		transition: border 500ms ease;
+		&:hover {
+			border-color: #000;
+		}
+	}
+}

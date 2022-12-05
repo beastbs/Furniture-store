@@ -1,2 +1,2 @@
 
-## Shopping App
+## Furniture store

@@ -1,14 +1,15 @@
 import { useSelector, useDispatch } from "react-redux";
 import ProductItem from "../ProductItem/ProductItem";
-import { addProductInCart } from "../../redux/actions";
+import { addProductInCart } from "../../redux/reducers/productsSlice";
 
 import "./ProductList.scss";
+import Categories from "../Categories/Categories";
 
 const ProductList = () => {
   const dispatch = useDispatch();
-  const { products } = useSelector((state) => state.productsReducer);
-  const { currentProducts } = useSelector((state) => state.productsReducer);
-  const { orders } = useSelector((state) => state.productsReducer);
+  const { products, currentProducts, orders } = useSelector(
+    (state) => state.products
+  );
 
   const onAddInCart = (id) => {
     let isInCart = false;
@@ -27,7 +28,12 @@ const ProductList = () => {
   const content = currentProducts.map(({ id, ...other }) => (
     <ProductItem onAddInCart={() => onAddInCart(id)} key={id} {...other} />
   ));
-  return <main className="product-list">{content}</main>;
+  return (
+    <div>
+      <Categories />
+      <main className="product-list">{content}</main>
+    </div>
+  );
 };
 
 export default ProductList;

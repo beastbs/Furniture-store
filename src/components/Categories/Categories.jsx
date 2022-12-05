@@ -1,11 +1,11 @@
 import { useSelector, useDispatch } from "react-redux";
-import { chooseCategories } from "../../redux/actions";
+import { chooseCategories } from "../../redux/reducers/productsSlice";
 
 import "./Categories.scss";
 
 const Categories = () => {
-  const { categories } = useSelector((state) => state.categoriesReducer);
-  const { products } = useSelector((state) => state.productsReducer);
+  const { categories } = useSelector((state) => state.categories);
+  const { products } = useSelector((state) => state.products);
   const dispatch = useDispatch();
 
   const onChooseCategories = (category) => {
