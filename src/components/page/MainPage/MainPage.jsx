@@ -5,7 +5,9 @@ const MainPage = () => {
   return (
     <div className="main-page">
       <div className="main-page__products">
-        <Link to="products">Показать все товары</Link>
+        <div className="main-page__wrapper">
+          <Link to="products">Показать все товары</Link>
+        </div>
       </div>
       <div className="main-page__desc">
         <h1>Доступная роскошь в Киеве — магазин House staff</h1>

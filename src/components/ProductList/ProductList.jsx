@@ -1,9 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
-import ProductItem from "../ProductItem/ProductItem";
 import { addProductInCart } from "../../redux/reducers/productsSlice";
 
-import "./ProductList.scss";
+import ProductItem from "../ProductItem/ProductItem";
 import Categories from "../Categories/Categories";
+import SearchPanel from "../SearchPanel/SearchPanel";
+import "./ProductList.scss";
 
 const ProductList = () => {
   const dispatch = useDispatch();
@@ -29,9 +30,20 @@ const ProductList = () => {
     <ProductItem onAddInCart={() => onAddInCart(id)} key={id} {...other} />
   ));
   return (
-    <div>
-      <Categories />
-      <main className="product-list">{content}</main>
+    <div className="product-list">
+      <div className="product-list__wrapper">
+        <Categories />
+        <SearchPanel />
+      </div>
+      <main className="product-list__content">
+        {content.length ? (
+          content
+        ) : (
+          <span style={{ fontSize: "24px", margin: "0 auto" }}>
+            Товар не найден
+          </span>
+        )}
+      </main>
     </div>
   );
 };

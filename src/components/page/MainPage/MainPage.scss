@@ -11,16 +11,32 @@
 		margin: 10px 0 10px 25px;
 	}
 	&__products {
+		text-align: center;
+	}
+	&__wrapper {
 		display: inline-block;
 		font-weight: 600;
-		font-size: 18px;
+		font-size: 54px;
 		border: 1px solid transparent;
 		padding: 10px 20px;
 		margin-bottom: 30px;
 		cursor: pointer;
-		transition: border 500ms ease;
+		transition: border, transform, 500ms ease;
+		animation: showProducts 5s infinite;
 		&:hover {
 			border-color: #000;
 		}
+	}
+}
+
+@keyframes showProducts {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
 	}
 }

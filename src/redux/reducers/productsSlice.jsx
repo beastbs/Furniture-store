@@ -26,6 +26,9 @@ const productsSlice = createSlice({
     chooseCategories: (state, action) => {
       state.currentProducts = action.payload;
     },
+    filteredProducts: (state, action) => {
+      state.currentProducts = action.payload;
+    },
   },
   extraReducers: (builders) => {
     builders
@@ -47,5 +50,9 @@ const productsSlice = createSlice({
 const { actions, reducer } = productsSlice;
 
 export default reducer;
-export const { addProductInCart, deleteProductFromCart, chooseCategories } =
-  actions;
+export const {
+  addProductInCart,
+  deleteProductFromCart,
+  chooseCategories,
+  filteredProducts,
+} = actions;
