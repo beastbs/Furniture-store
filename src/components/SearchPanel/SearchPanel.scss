@@ -7,10 +7,10 @@
 		outline: none;
 		border: none;
 		border-bottom: 2px solid #000;
-		
 		&:focus {
 			background-color: rgb(242, 242, 242);
-			// border-color: rgb(117, 117, 117);
+			border-color: rgb(85, 85, 85);
+			border-radius: 3px 3px 0 0;
 		}
 	}
 	&__icon {

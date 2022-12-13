@@ -6,6 +6,7 @@ const initialState = {
   orders: [],
   products: [],
   currentProducts: [],
+  productsByCategories: [],
 };
 
 export const fetchProducts = createAsyncThunk("products/fetchProducts", () => {
@@ -25,6 +26,7 @@ const productsSlice = createSlice({
     },
     chooseCategories: (state, action) => {
       state.currentProducts = action.payload;
+      state.productsByCategories = action.payload;
     },
     filteredProducts: (state, action) => {
       state.currentProducts = action.payload;
@@ -38,6 +40,7 @@ const productsSlice = createSlice({
       .addCase(fetchProducts.fulfilled, (state, action) => {
         state.products = action.payload;
         state.currentProducts = action.payload;
+        state.productsByCategories = action.payload;
         state.productStatus = "idle";
       })
       .addCase(fetchProducts.rejected, (state) => {

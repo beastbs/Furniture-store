@@ -10,7 +10,7 @@ const SearchPanel = () => {
   const { value, onChange } = useInput("");
   const focusRef = useRef(null);
 
-  const { products } = useSelector((state) => state.products);
+  const { productsByCategories } = useSelector((state) => state.products);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -20,8 +20,8 @@ const SearchPanel = () => {
   const handleFiltered = (e) => {
     onChange(e);
 
-    const filtered = products.filter((product) => {
-      return product.title.toLowerCase().includes(e.target.value.toLowerCase());
+    const filtered = productsByCategories.filter((product) => {
+      return product.title.toLowerCase().includes(value.toLowerCase());
     });
 
     dispatch(filteredProducts(filtered));
@@ -30,8 +30,6 @@ const SearchPanel = () => {
   return (
     <form className="search">
       <input
-        // {...value}
-        // {...onChange}
         value={value}
         onChange={handleFiltered}
         className="search__input"
@@ -40,6 +38,7 @@ const SearchPanel = () => {
         ref={focusRef}
         // autoFocus
       />
+
       <FaSearch size={20} className="search__icon" />
     </form>
   );
