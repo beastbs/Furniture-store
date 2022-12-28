@@ -1,0 +1,36 @@
+@import "../../styles/variables.scss";
+
+.btn {
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	padding: 5px 10px;
+	cursor: pointer;
+	&--primary {
+		width: 100px;
+		background-color: $primary;
+		&:hover {
+			background-color: $success;
+			outline: none;
+		}
+	}
+	&--success {
+		background-color: $success;
+	}
+	&--warning {
+		background-color: $warning;
+	}
+	&--danger {
+		width: 100px;
+		background-color: $danger;
+		&:hover {
+			background-color: $danger-hover;
+		}
+	}
+	&--small {
+		font-size: 15px;
+	}
+	&--medium {
+		font-size: 17px;
+	}
+}

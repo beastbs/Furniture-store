@@ -6,6 +6,8 @@ import Footer from "../Footer/Footer";
 
 import "./App.scss";
 import ProductList from "../ProductList/ProductList";
+import About from "../page/About/About";
+import CartBlock from "../page/CartBlock/CartBlock";
 
 function App() {
   return (
@@ -14,9 +16,11 @@ function App() {
         <div className="app__wrapper">
           <Header />
           <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="products" element={<ProductList />} />
-            <Route path="products/:title" element={<OwnProductItem />} />
+            {/* <Route path="/" element={<MainPage />} /> */}
+            <Route path="/" element={<ProductList />} />
+            <Route path="/:title" element={<OwnProductItem />} />
+            <Route path="about" element={<About />} />
+            <Route path="cart" element={<CartBlock />} />
             <Route path="*" element={<Page404 />} />
           </Routes>
           <Footer />

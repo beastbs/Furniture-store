@@ -1,0 +1,45 @@
+@import "../../styles/variables.scss";
+
+.product-cart {
+	position: absolute;
+	top: 30px;
+	right: 0;
+	width: 450px;
+	min-height: 40px;
+	background: #fafafa;
+	border-radius: 5px;
+	padding: 10px;
+	-webkit-box-shadow: 10px 10px 20px 0px #6a6a6a;
+	box-shadow: 5px 5px 20px -5px #6a6a6a;
+	z-index: 1000;
+	&__quantity {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 30px;
+		height: 30px;
+		background-color: $success;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
+	}
+	&__empty {
+		margin-left: 20px;
+		line-height: 40px;
+		font-size: 20px;
+	}
+	&-btns__wrapper {
+		display: flex;
+		justify-content: flex-end;
+		button {
+			margin-left: 10px;
+		}
+	}
+	&__total {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}

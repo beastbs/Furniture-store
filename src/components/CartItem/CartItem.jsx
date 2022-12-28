@@ -1,8 +1,8 @@
 import { FaTrash } from "react-icons/fa";
 
-import "./ProductCartOrder.scss";
+import "./CartItem.scss";
 
-const ProductCartOrder = ({ title, price, imgUrl, onDeleteFromCart }) => {
+const CartItem = ({ title, price, imgUrl, onDeleteFromCart }) => {
   return (
     <div className="cart-order">
       <img className="cart-order__img" src={"./img/" + imgUrl} alt={title} />
@@ -15,4 +15,4 @@ const ProductCartOrder = ({ title, price, imgUrl, onDeleteFromCart }) => {
   );
 };
 
-export default ProductCartOrder;
+export default CartItem;

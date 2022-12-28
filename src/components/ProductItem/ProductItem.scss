@@ -36,8 +36,16 @@
 		color: #fff;
 		font-weight: 600;
 		transition: transform 500ms ease;
+		span {
+			font-size: 28px;
+		}
 		&:hover {
 			transform: scale(1.5) translateY(-5px);
 		}
 	}
+}
+
+.added {
+	background-color: #ffc107;
+	color: #000;
 }

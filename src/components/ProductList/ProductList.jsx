@@ -26,8 +26,12 @@ const ProductList = () => {
     }
   };
 
-  const content = currentProducts.map(({ id, ...other }) => (
-    <ProductItem onAddInCart={() => onAddInCart(id)} key={id} {...other} />
+  const content = currentProducts.map((currProduct) => (
+    <ProductItem
+      onAddInCart={() => onAddInCart(currProduct.id)}
+      key={currProduct.id}
+      {...currProduct}
+    />
   ));
   return (
     <div className="product-list">
