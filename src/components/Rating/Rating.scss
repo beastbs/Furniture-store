@@ -1,3 +1,14 @@
+button {
+	background-color: transparent;
+	border: none;
+	outline: none;
+}
 .rating {
 	margin-left: 20px;
+	&__on {
+		color: rgb(245, 229, 19);
+	}
+	&__off {
+		color: #eee;
+	}
 }

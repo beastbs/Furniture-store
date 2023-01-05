@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import Rating from "../Rating/Rating";
 import "./ProductItem.scss";
 
-const ProductItem = ({ id, title, imgUrl, price, onAddInCart }) => {
+const ProductItem = ({ id, title, imgUrl, price, onAddInCart, rating }) => {
   const { orders } = useSelector((state) => state.products);
   const itemInCart = orders.some((order) => order.id === id);
 
@@ -22,7 +22,7 @@ const ProductItem = ({ id, title, imgUrl, price, onAddInCart }) => {
         />
       </Link>
       <h2 className="product-item__title">{title}</h2>
-      <Rating />
+      <Rating rating={rating} />
       <b className="product-item__price">{`${
         price ? price + `$` : `Цену уточняйте у продавца`
       }`}</b>
